@@ -227,6 +227,11 @@ msgstr "Folder-ul ”sourcemods” a fost găsit automat la: %s"
 msgid "Does that look correct?"
 msgstr "Arată asta corect?"
 
+#: setup.py:79
+#, python-format
+msgid "Sourcemods folder was automatically found at:\n%s\n\nDoes that look correct?"
+msgstr "Folder-ul ”sourcemods” a fost găsit automat la:\n%s\n\nArată asta corect?"
+
 #: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "

@@ -4,25 +4,37 @@ asking questions, generally handling any sort
 of communication or interactivity with the user.
 """
 from os import environ, makedirs, path, rmdir
-from sys import exit
+import sys
 from time import sleep
 from gettext import gettext as _
+import traceback
 from rich import print
 import vars
 import downloads
 import versions
 import troubleshoot
+import gui_tk
+from tkinter import filedialog
+import os
 
-def message(msg, delay = 0):
+def message(msg, delay = 0, consoleonly = False):
     """
     Show a message to user.
     Delay stops program for specified amount of seconds.
     """
+    if vars.GUI_MODE and not consoleonly:
+        gui_tk.message_tk(msg)
+        return
+    
     print("[bold yellow]" + msg)
     if not vars.SCRIPT_MODE:
         sleep(delay)
 
 def main_menu():
+    if vars.GUI_MODE:
+        gui_tk.main_menu_tk()
+        return
+    
     print(_("""Welcome to TF2CDownloader. Enter a number to continue.\n
         1 - Install or reinstall the game
         2 - Check for and apply any available updates
@@ -58,6 +70,10 @@ def message_yes_no(msg: str, default: bool = None, script_mode_default_override:
     """
     Show a message to user and get yes/no answer.
     """
+    if vars.GUI_MODE:
+        choice_tk = gui_tk.message_yes_no_tk(msg)
+        return choice_tk
+    
     if vars.SCRIPT_MODE:
         # Display msg even though we are in script mode, this because it might
         # contain useful information.
@@ -104,7 +120,10 @@ def message_dir(msg):
     Show a message and ask for a directory.
     """
     while True:
-        dir = input(msg + ": ")
+        if vars.GUI_MODE:
+            dir = filedialog.askdirectory()
+        else:
+            dir = input(msg + ": ")
         if dir.count("~") > 0:
             dir = path.expanduser(dir)
         if dir.count("$") > 0:
@@ -118,11 +137,33 @@ def message_dir(msg):
         except Exception:
             pass
 
-def message_end(msg, code):
+def message_end(msg, code, consoleonly = False):
     """
     Show a message and exit.
     """
+    if vars.GUI_MODE and not consoleonly:
+        gui_tk.message_end_tk(msg, code)
+    
     print("[bold green]" + msg)
     if not vars.SCRIPT_MODE:
         input(_("Press Enter to exit."))
-    exit(code)
+    sys.exit(code)
+
+def message_error(msg, code, consoleonly = False):
+    """
+    Show an error and exit.
+    """
+    traceback.print_exc()
+    print("[bold red]" + msg)
+    print(_("[italic magenta]----- Exception details above this line -----"))
+    print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
+    if os.environ.get("WT_SESSION"):
+        print(_("[bold]You are safe to close this window."))
+    else:
+        if not vars.SCRIPT_MODE and not vars.GUI_MODE:
+            input(_("Press Enter to exit."))
+
+    if vars.GUI_MODE and not consoleonly:
+        gui_tk.message_error_tk(msg, code)
+    
+    sys.exit(code)

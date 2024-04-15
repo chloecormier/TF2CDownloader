@@ -44,4 +44,4 @@ def check_downloader_update():
     elif vars.SCRIPT_MODE:
         gui.message(_("TF2CDownloader out-of-date."))
     else:
-        gui.message(_("User chose to skip update. Things may be broken."))
+        gui.message(_("User chose to skip update. Things may be broken."), 0, True)

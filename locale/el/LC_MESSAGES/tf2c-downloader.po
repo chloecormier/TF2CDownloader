@@ -207,6 +207,11 @@ msgstr "Ο Sourcemods φάκελος βρέθηκε αυτόματα στην θ
 msgid "Does that look correct?"
 msgstr ""
 
+#: setup.py:79
+#, python-format
+msgid "Sourcemods folder was automatically found at:\n%s\n\nDoes that look correct?"
+msgstr "Ο Sourcemods φάκελος βρέθηκε αυτόματα στην θέση:\n%s"
+
 #: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "

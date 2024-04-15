@@ -24,6 +24,9 @@ def data_generator():
 	for p in glob.iglob("locale/**/*.mo", recursive=True):
 		datas.append((p,os.path.dirname(p)))
 	
+	datas.append(('banner.png', '.'))
+	datas.append(('tf2c.ico', '.'))
+	
 	return datas
 
 a = Analysis(

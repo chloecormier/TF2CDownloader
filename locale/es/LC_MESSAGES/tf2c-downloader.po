@@ -218,6 +218,11 @@ msgstr "La carpeta Sourcemods se encontró automáticamente en: %s"
 msgid "Does that look correct?"
 msgstr "¿Eso parece correcto?"
 
+#: setup.py:79
+#, python-format
+msgid "Sourcemods folder was automatically found at:\n%s\n\nDoes that look correct?"
+msgstr "La carpeta Sourcemods se encontró automáticamente en:\n%s\n\n¿Eso parece correcto?"
+
 #: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "

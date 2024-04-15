@@ -83,13 +83,7 @@ def wizard():
     except Exception as ex:
         if ex is not SystemExit:
             traceback.print_exc()
-            print(_("[italic magenta]----- Exception details above this line -----"))
-            print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
-            if os.environ.get("WT_SESSION"):
-                print(_("[bold]You are safe to close this window."))
-            else:
-                input(_("Press Enter to exit."))
-            exit(1)
+            gui.message_error("An error has occured! Check console for details", 1)
 
 def manual_script():
     try:
@@ -164,6 +158,12 @@ path will be the current work directory.'''
             print(_("[italic magenta]----- Exception details above this line -----"))
             print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
             exit(1)
+
+if ['--install', '--update', '--help'] in sys.argv:
+    vars.SCRIPT_MODE = True
+
+if '--nogui' in sys.argv:
+    vars.GUI_MODE = False
 
 if vars.SCRIPT_MODE:
     manual_script()

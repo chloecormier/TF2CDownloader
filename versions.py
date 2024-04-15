@@ -17,7 +17,7 @@ def get_version_list():
             version_remote = httpx.get(vars.SOURCE_URL + 'versions.json')
             VERSION_LIST = json.loads(version_remote.text)
         except httpx.RequestError:
-            gui.message_end(_("Could not get version list. If your internet connection is fine, the servers could be having technical issues."), 1)
+            gui.message_error(_("Could not get version list. If your internet connection is fine, the servers could be having technical issues."), 1)
     return VERSION_LIST
 
 def update_version_file():

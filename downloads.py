@@ -3,6 +3,7 @@ from tkinter import filedialog, Tk
 from shutil import disk_usage, rmtree
 from gettext import gettext as _
 from gettext import ngettext as _N
+import subprocess
 from subprocess import run
 from os import path
 from platform import system
@@ -24,7 +25,7 @@ def download(url, size):
 def extract(filename, endpath, size):
     free_space_check(size, 'permanent')
 
-    gui.message(_("Extracting the downloaded archive, please wait patiently."), 1)
+    gui.message(_("Extracting the downloaded archive, please wait patiently."), 1, True)
     class ZstdTarFile(tarfile.TarFile):
         def __init__(self, name, mode='r', *, level_or_option=None, zstd_dict=None, **kwargs):
             self.zstd_file = pyzstd.ZstdFile(name, mode,
@@ -55,7 +56,7 @@ def butler_patch(url, staging_dir, patchfilename, gamedir):
         rmtree(staging_dir)
     run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2023-05-27', '--allow-piece-length-change=true', '--disable-ipv6=true', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--allow-overwrite=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
     '-d' + vars.TEMP_PATH, url], check=True)
-    gui.message(_("Patching your game with the new update, please wait patiently."), 1)
+    gui.message(_("Patching your game with the new update, please wait patiently."), 1, True)
     run([vars.BUTLER_BINARY, 'apply', '--staging-dir=' + staging_dir, path.join(vars.TEMP_PATH, patchfilename), gamedir], check=True)
     if Path(staging_dir).exists() and Path(staging_dir).is_dir():
         rmtree(staging_dir)
@@ -87,12 +88,12 @@ def free_space_check(size, cat):
                         if disk_usage(vars.TEMP_PATH)[2] < size:
                             gui.message(_("Still not enough space at specified path. Retry, and select a different drive if available."))
                 except TypeError:
-                    gui.message_end(_("Folder selection prompt closed without choosing any path. Exiting..."), 1)
+                    gui.message_error(_("Folder selection prompt closed without choosing any path. Exiting..."), 1)
 
 
     if cat == 'permanent':
         if disk_usage(vars.INSTALL_PATH)[2] < size and vars.INSTALLED is False:
-            gui.message_end(_("You don't have enough free space for the extraction. A minimum of %s at your chosen extraction site is required.") % pretty_size(size), 1)
+            gui.message_error(_("You don't have enough free space for the extraction. A minimum of %s at your chosen extraction site is required.") % pretty_size(size), 1)
 
 def prepare_symlink():
     for s in vars.TO_SYMLINK:
@@ -114,12 +115,12 @@ def install():
 
     prepare_symlink()
 
-    gui.message(_("Getting the archive..."), 0)
+    gui.message(_("Getting the archive..."), 0, True)
 
     download(vars.SOURCE_URL + lastver["url"], lastver["presz"])
 
     if not path.isdir(vars.INSTALL_PATH):
-        gui.message_end(_("The specified extraction location does not exist."), 1)
+        gui.message_error(_("The specified extraction location does not exist."), 1)
 
     extract(lastver["file"], vars.INSTALL_PATH, lastver["postsz"])
 

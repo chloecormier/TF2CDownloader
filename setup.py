@@ -76,12 +76,19 @@ def setup_path(manual_path):
 
     smodsfound = isinstance(vars.INSTALL_PATH, str)
     if smodsfound is True and manual_path is not True:
-        gui.message(_("Sourcemods folder was automatically found at: %s") % vars.INSTALL_PATH)
-        if gui.message_yes_no(_("Does that look correct?")):
-            confirm = True
+        if vars.GUI_MODE:
+            if gui.message_yes_no(_("Sourcemods folder was automatically found at:\n%s\n\nDoes that look correct?") % vars.INSTALL_PATH):
+                confirm = True
+            else:
+                setup_path(True)
+                return
         else:
-            setup_path(True)
-            return
+            gui.message(_("Sourcemods folder was automatically found at:\n%s") % vars.INSTALL_PATH)
+            if gui.message_yes_no(_("Does that look correct?")):
+                confirm = True
+            else:
+                setup_path(True)
+                return
     else:
         gui.message(_("WARNING: Steam's sourcemods folder has not been found, or you chose not to use it."))
         if gui.message_yes_no(_("Would you like to extract in %s? You must move it to your sourcemods manually.") % getcwd()):
@@ -92,8 +99,11 @@ def setup_path(manual_path):
 
     if not confirm:
         if not gui.message_yes_no(_("TF2 Classic will be installed in %s\nDo you accept?") % vars.INSTALL_PATH):
-            print(_("Reinitialising...\n"))
-            setup_path(False)
+            if vars.GUI_MODE:
+                gui.message_end(_("We have nothing to do. Goodbye!"), 0)
+            else:
+                print(_("Reinitialising...\n"))
+                setup_path(False)
 
 def setup_binaries():
     """
@@ -106,15 +116,23 @@ def setup_binaries():
         if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
             vars.ARIA2C_BINARY = path.abspath(path.join(path.dirname(__file__), 'aria2c.exe'))
             vars.BUTLER_BINARY = path.abspath(path.join(path.dirname(__file__), 'butler.exe'))
+            vars.ICO_PATH = path.abspath(path.join(path.dirname(__file__), 'tf2c.ico'))
+            vars.BANNER_PATH = path.abspath(path.join(path.dirname(__file__), 'banner.png'))
         else:
             # When running as a script, we just select the Binaries folder directly for Aria2 and Butler.
             vars.ARIA2C_BINARY = 'Binaries/aria2c.exe'
             vars.BUTLER_BINARY = 'Binaries/butler.exe'
+            vars.ICO_PATH = 'tf2c.ico'
+            vars.BANNER_PATH = 'banner.png'
     else:
         # If we're running on Linux...
         if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
             vars.ARIA2C_BINARY = path.abspath(path.join(path.dirname(__file__), 'aria2c'))
             vars.BUTLER_BINARY = path.abspath(path.join(path.dirname(__file__), 'butler'))
+            vars.ICO_PATH = path.abspath(path.join(path.dirname(__file__), 'tf2c.ico'))
+            vars.BANNER_PATH = path.abspath(path.join(path.dirname(__file__), 'banner.png'))
         else:
             vars.BUTLER_BINARY = 'Binaries/butler'
             vars.ARIA2C_BINARY = 'Binaries/aria2c'
+            vars.ICO_PATH = 'tf2c.ico'
+            vars.BANNER_PATH = 'banner.png'

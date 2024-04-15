@@ -20,7 +20,10 @@ BUTLER_BINARY = None
 INSTALL_PATH = None
 TF2C_PATH = None
 
-SCRIPT_MODE = len(sys.argv) > 1
+SCRIPT_MODE = False
+GUI_MODE = True
+ICO_PATH = None
+BANNER_PATH = None
 
 SOURCE_URL = 'https://wiki.tf2classic.com/kachemak/'
 
