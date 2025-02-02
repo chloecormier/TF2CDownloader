@@ -8,86 +8,88 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:14-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-02-03 16:02+0000\n"
+"Last-Translator: NotChakerAt <Chakeratlas@outlook.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/tf2cdownloader/tf2cdownloader/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
-msgstr ""
+msgstr "正在解压已下载的文件，请耐心等待。"
 
 #: downloads.py:65
 msgid "Patching your game with the new update, please wait patiently."
-msgstr ""
+msgstr "正在将你的游戏更新至最新版本，请耐心等待。"
 
 #: downloads.py:73
 #, python-format
 msgid "%s byte"
 msgid_plural "%s bytes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s 字节"
 
 #: downloads.py:75
 #, python-format
 msgid "%.2f kB"
-msgstr ""
+msgstr "%.2f KB"
 
 #: downloads.py:77
 #, python-format
 msgid "%.2f MB"
-msgstr ""
+msgstr "%.2f MB"
 
 #: downloads.py:79
 #, python-format
 msgid "%.2f GB"
-msgstr ""
+msgstr "%.2f GB"
 
 #: downloads.py:81
 #, python-format
 msgid "%.2f TB"
-msgstr ""
+msgstr "%.2f TB"
 
 #: downloads.py:83
 #, python-format
 msgid "%.2f PB"
-msgstr ""
+msgstr "%.2f PB"
 
 #: downloads.py:88
 #, python-format
 msgid ""
 "You don't have enough free space in your computer's default temporary folder "
 "for this. A minimum of %s is required. Select alternate temporary folder?"
-msgstr ""
+msgstr "你的默认临时文件夹中没有足够的可用空间。至少需要 %s "
+"的空间。需要选择备用文件夹吗？"
 
 #: downloads.py:95
 msgid ""
 "Still not enough space at specified path. Retry, and select a different "
 "drive if available."
-msgstr ""
+msgstr "指定路径仍然没有足够的空间，请重试并选择其他可用的硬盘或分区。"
 
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
-msgstr ""
+msgstr "文件夹选择提示在不选择任何路径下关闭。正在退出…"
 
 #: downloads.py:102
 #, python-format
 msgid ""
 "You don't have enough free space for the extraction. A minimum of %s at your "
 "chosen extraction site is required."
-msgstr ""
+msgstr "没有足够的可用空间来进行解压。您选择的位置至少需要 %s 的空间。"
 
 #: downloads.py:124
 msgid "Getting the archive..."
-msgstr ""
+msgstr "正在获取文件…"
 
 #: downloads.py:129
 msgid "The specified extraction location does not exist."
-msgstr ""
+msgstr "指定的位置不存在。"
 
 #: gui.py:26
 msgid ""
@@ -97,122 +99,127 @@ msgid ""
 "        2 - Check for and apply any available updates\n"
 "        3 - Verify and repair game files"
 msgstr ""
+"欢迎使用 TF2CDownloader。输入数字以继续。\n"
+"\n"
+"1 - 安装或重装游戏\n"
+"2 - 检查并应用任何可用更新\n"
+"3 - 验证和修复游戏文件"
 
 #: gui.py:32 gui.py:42
 msgid ""
 "Starting the download for TF2 Classic... You may see some errors that are "
 "safe to ignore."
-msgstr ""
+msgstr "开始下载 TF2 Classic…可能出现一些完全可以忽略的报错。"
 
 #: gui.py:35 gui.py:45 tf2c_downloader.py:133
 msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr ""
+msgstr "安装已成功完成。记得去重启 Steam！"
 
 #: gui.py:40 tf2c_downloader.py:154
 msgid "The update has successfully completed."
-msgstr ""
+msgstr "成功完成更新。"
 
 #: gui.py:52
 msgid "Invalid choice. Please retry."
-msgstr ""
+msgstr "选择无效，请重试。"
 
 #: gui.py:64
 msgid "The application is in script mode, using default choice."
-msgstr ""
+msgstr "程序正处于脚本模式，使用默认选择。"
 
 #: gui.py:71
 msgid "yes"
-msgstr ""
+msgstr "是"
 
 #: gui.py:72
 msgid "no"
-msgstr ""
+msgstr "否"
 
 #: gui.py:78
 msgid " {y/n}"
-msgstr ""
+msgstr " {y/n}"
 
 #: gui.py:80
 msgid " {Y/n}"
-msgstr ""
+msgstr " {Y/n}"
 
 #: gui.py:82
 msgid " {y/N}"
-msgstr ""
+msgstr " {y/N}"
 
 #: gui.py:92
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
-msgstr ""
+msgstr "[bold blue]请回答‘是’或‘否’（‘y’或‘n’）。[/bold blue]"
 
 #: gui.py:126 tf2c_downloader.py:88
 msgid "[bold]You are safe to close this window."
-msgstr ""
+msgstr "[blod]可以安全关闭此窗口了。"
 
 #: gui.py:128 tf2c_downloader.py:90
 msgid "Press Enter to exit."
-msgstr ""
+msgstr "按下回车退出。"
 
 #: selfupdate.py:34
 msgid ""
 "WARNING: downloader failed to check itself for updates, potentially out-of-"
 "date."
-msgstr ""
+msgstr "警告：下载程序无法检查自身更新，可能程序已过期。"
 
 #: selfupdate.py:41
 msgid "TF2CDownloader appears to be up-to-date."
-msgstr ""
+msgstr "TF2CDownloader 似乎已是最新版本。"
 
 #: selfupdate.py:42
 msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
-msgstr ""
+msgstr "TF2CDownloader 有可用更新。当前版本可能已经无法正常工作。要安装吗？"
 
 #: selfupdate.py:43
 msgid ""
 "Delete TF2CDownloader, then redownload and relaunch it from https://"
 "tf2classic.com/download"
-msgstr ""
+msgstr "删除 TF2CDownloader，然后从 https://tf2classic.com/download 重新下载一个"
 
 #: selfupdate.py:45
 msgid "TF2CDownloader out-of-date."
-msgstr ""
+msgstr "TF2CDownloader 已过期。"
 
 #: selfupdate.py:47
 msgid "User chose to skip update. Things may be broken."
-msgstr ""
+msgstr "用户选择跳过更新，这可能会出现问题。"
 
 #: setup.py:66
 #, python-format
 msgid "Installation location not specified, will assume: %s"
-msgstr ""
+msgstr "未指定安装位置，将假定：%s"
 
 #: setup.py:79
 #, python-format
 msgid "Sourcemods folder was automatically found at: %s"
-msgstr ""
+msgstr "Sourcemods文件夹在 %s 被自动找到"
 
 #: setup.py:80
 msgid "Does that look correct?"
-msgstr ""
+msgstr "是这样的吗？"
 
 #: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "
 "use it."
-msgstr ""
+msgstr "警告：未找到 Steam 的 sourcemods 文件夹，或者您选择不使用它。"
 
 #: setup.py:87
 #, python-format
 msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
 "manually."
-msgstr ""
+msgstr "提取到 %s 吗？你必须手动将其移动到 sourcemods。"
 
 #: setup.py:91
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
-msgstr ""
+msgstr "请输入 TF2 Classic 的安装位置。\n"
 
 #: setup.py:94
 #, python-format
@@ -220,26 +227,30 @@ msgid ""
 "TF2 Classic will be installed in %s\n"
 "Do you accept?"
 msgstr ""
+"TF2 Classic 将安装在 %s 中\n"
+"确认吗？"
 
 #: setup.py:95
 msgid "Reinitialising...\n"
-msgstr ""
+msgstr "正在重新初始化…\n"
 
 #: tf2c_downloader.py:46
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
-msgstr ""
+msgstr "看起来我们正在后台运行呢。这可不行，所以正在退出。"
 
 #: tf2c_downloader.py:85 tf2c_downloader.py:163
 msgid "[italic magenta]----- Exception details above this line -----"
-msgstr ""
+msgstr "[italic magenta]-----此行上方的异常详细信息-----"
 
 #: tf2c_downloader.py:86 tf2c_downloader.py:164
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
+"[bold red]:warning: 程序执行失败。去 Discord 服务器的 #technical-issues "
+"频道或其他TF2C群发送截图（别拍屏） :warning:[/bold red]"
 
 #: tf2c_downloader.py:97
 msgid ""
@@ -267,80 +278,96 @@ msgid ""
 "the\n"
 "path will be the current work directory."
 msgstr ""
+"用法：TF2CDownloader [COMMAND] [PATH]\n"
+"TF2 Classic 的安装实用程序。\n"
+"\n"
+"如果未提供任何参数，下载器将以setup模式运行，将询问一系列问题以让普通用户能够"
+"安装游戏。这也是从桌面直接点开时的模式。\n"
+"\n"
+"有效命令：\n"
+"--install 将 TF2 Classic 安装到 PATH 内的新文件夹中\n"
+"--update 更新 PATH 内其文件夹中预先存在的 TF2 Classic 安装\n"
+"--help 显示这个页面\n"
+"\n"
+"PATH 是包含 TF2 Classic 文件夹的文件夹。这通常是客户端的 sourcemods "
+"文件夹，或起源专用服务器（SRCDS）的文件夹。\n"
+"\n"
+"如果未提供 PATH，则它将被替换为 Steam 目录中检测到的 sourcemods "
+"文件夹的路径。如果无法检测到，则路径将是当前目录。"
 
 #: tf2c_downloader.py:130
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
-msgstr ""
+msgstr "TF2 Classic 已安装，假设需要重装。"
 
 #: tf2c_downloader.py:145
 msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
-msgstr ""
+msgstr "TF2 Classic 未安装，无法进行更新。请先使用 --install 安装。"
 
 #: tf2c_downloader.py:157
 msgid "Unrecognised command. Try --help"
-msgstr ""
+msgstr "你可能打错了命令。尝试输入 --help"
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
-msgstr ""
+msgstr "正在应用安全黑名单…"
 
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
-msgstr ""
+msgstr "警告：无法应用安全黑名单。"
 
 #: versions.py:20
 msgid ""
 "Could not get version list. If your internet connection is fine, the servers "
 "could be having technical issues."
-msgstr ""
+msgstr "无法获取版本列表。如果您的互联网连接正常，则服务器可能正在维护。"
 
 #: versions.py:44 versions.py:72
 msgid ""
 "We can't read the version of your installation. It could be corrupted. Do "
 "you want to reinstall the game?"
-msgstr ""
+msgstr "我们无法读取您安装的版本。文件可能已损坏。要重装游戏吗？"
 
 #: versions.py:47 versions.py:66 versions.py:75 versions.py:93 versions.py:101
 #: versions.py:112
 msgid "We have nothing to do. Goodbye!"
-msgstr ""
+msgstr "我们没什么事要做，拜拜了！"
 
 #: versions.py:63
 msgid ""
 "No game installation detected at given sourcemods path. Do you want to "
 "install the game?"
-msgstr ""
+msgstr "在给定的 sourcemods 路径中未检测到游戏安装。要安装游戏吗？"
 
 #: versions.py:90
 msgid ""
 "The version of your installation is unknown. It could be corrupted. Do you "
 "want to reinstall the game?"
-msgstr ""
+msgstr "你安装的版本未知。文件可能已损坏。要重装游戏吗？"
 
 #: versions.py:98
 msgid ""
 "We think we've found an existing up-to-date installation of the game. Do you "
 "want to reinstall it?"
-msgstr ""
+msgstr "我们认为已经找到游戏的现有最新版本。要重装吗？"
 
 #: versions.py:106
 msgid "An update is available for TF2 Classic. Do you want to install it?"
-msgstr ""
+msgstr "TF2 Classic 有可用更新。要安装吗？"
 
 #: versions.py:107
 msgid ""
 "If running, please close your game client and/or game launcher. Confirm once "
 "they're closed."
-msgstr ""
+msgstr "如果正在运行，请确认关闭游戏客户端和/或游戏启动器。"
 
 #: versions.py:110
 msgid "Exiting..."
-msgstr ""
+msgstr "正在退出…"
 
 #: versions.py:114
 msgid ""
 "An update is available, but no patch could be found for your game version. "
 "Try reinstalling?"
-msgstr ""
+msgstr "有可用更新，但找不到适合您的游戏版本的补丁。试着重装吗？"
