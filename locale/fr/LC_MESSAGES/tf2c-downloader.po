@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:13-0500\n"
-"PO-Revision-Date: 2023-05-02 16:53+0000\n"
+"PO-Revision-Date: 2023-06-16 19:53+0000\n"
 "Last-Translator: Technochips <thetechnochips@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/tf2cdownloader/"
 "tf2cdownloader/fr/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 4.18.1\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
@@ -179,7 +179,7 @@ msgstr ""
 
 #: selfupdate.py:41
 msgid "TF2CDownloader appears to be up-to-date."
-msgstr "TF2CDownloader semble être obsolète."
+msgstr "TF2CDownloader semble être à jour."
 
 #: selfupdate.py:42
 msgid ""
